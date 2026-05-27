@@ -1,0 +1,89 @@
+{
+  "notebook_version": "production_v1",
+  "embed_model_name": "sentence-transformers/all-MiniLM-L6-v2",
+  "n_embed_components": 24,
+  "random_state": 42,
+  "test_size": 0.2,
+  "risk_thresholds": {
+    "high": 0.7,
+    "medium": 0.4
+  },
+  "cat_cols_combined": [
+    "gender",
+    "Partner",
+    "Dependents",
+    "PhoneService",
+    "MultipleLines",
+    "InternetService",
+    "OnlineSecurity",
+    "OnlineBackup",
+    "DeviceProtection",
+    "TechSupport",
+    "StreamingTV",
+    "StreamingMovies",
+    "Contract",
+    "PaperlessBilling",
+    "PaymentMethod"
+  ],
+  "model_comparison": [
+    {
+      "model": "CatBoost",
+      "cv_roc_auc_mean": 0.9991,
+      "cv_roc_auc_std": 0.0003,
+      "test_roc_auc": 0.9998,
+      "test_f1": 0.9825,
+      "test_precision": 0.9918,
+      "test_recall": 0.9733
+    },
+    {
+      "model": "GradientBoosting",
+      "cv_roc_auc_mean": 0.9989,
+      "cv_roc_auc_std": 0.0003,
+      "test_roc_auc": 0.9992,
+      "test_f1": 0.9769,
+      "test_precision": 0.9945,
+      "test_recall": 0.9599
+    },
+    {
+      "model": "RandomForest",
+      "cv_roc_auc_mean": 0.9966,
+      "cv_roc_auc_std": 0.0008,
+      "test_roc_auc": 0.9976,
+      "test_f1": 0.9663,
+      "test_precision": 0.9755,
+      "test_recall": 0.9572
+    }
+  ],
+  "best_model": "CatBoost",
+  "fastapi_input_fields": [
+    "gender",
+    "SeniorCitizen",
+    "Partner",
+    "Dependents",
+    "tenure",
+    "PhoneService",
+    "MultipleLines",
+    "InternetService",
+    "OnlineSecurity",
+    "OnlineBackup",
+    "DeviceProtection",
+    "TechSupport",
+    "StreamingTV",
+    "StreamingMovies",
+    "Contract",
+    "PaperlessBilling",
+    "PaymentMethod",
+    "MonthlyCharges",
+    "TotalCharges",
+    "CustomerFeedback"
+  ],
+  "fastapi_output_fields": [
+    "churn_probability",
+    "churn_prediction",
+    "risk_tier",
+    "sentiment_label",
+    "sentiment_confidence",
+    "top_churn_factors",
+    "recommended_action"
+  ]
+}

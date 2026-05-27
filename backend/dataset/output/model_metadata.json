@@ -1,0 +1,53 @@
+{
+  "raw_data_path": "dataset/telco_churn_with_all_feedback.csv",
+  "prep_data_path": "dataset/telco_prep.csv",
+  "best_tabular_model": "LogisticRegression",
+  "tabular_metrics": [
+    {
+      "model": "LogisticRegression",
+      "precision": 0.5143338954468802,
+      "recall": 0.8155080213903744,
+      "f1": 0.6308169596690796,
+      "roc_auc": 0.8478131700638094
+    },
+    {
+      "model": "RandomForest",
+      "precision": 0.5695364238410596,
+      "recall": 0.6898395721925134,
+      "f1": 0.6239419588875453,
+      "roc_auc": 0.8469632385233408
+    }
+  ],
+  "combined_metrics": [
+    {
+      "model": "Combined Tabular + Sentiment",
+      "precision": 0.8795811518324608,
+      "recall": 0.8983957219251337,
+      "f1": 0.8888888888888888,
+      "roc_auc": 0.9784856234984112
+    },
+    {
+      "model": "Best Tabular",
+      "precision": 0.5143338954468802,
+      "recall": 0.8155080213903744,
+      "f1": 0.6308169596690796,
+      "roc_auc": 0.8478131700638094
+    }
+  ],
+  "risk_thresholds": {
+    "high": 0.8,
+    "medium": 0.5
+  },
+  "api_example": {
+    "request": {
+      "tenure": 5,
+      "monthly_charges": 80,
+      "feedback": "layanan mahal dan lambat"
+    },
+    "response_fields": [
+      "churn_probability",
+      "predicted_sentiment_label",
+      "recommendation"
+    ]
+  }
+}

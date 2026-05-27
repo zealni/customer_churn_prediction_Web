@@ -1,0 +1,75 @@
+{
+  "model_name": "GradientBoosting",
+  "num_cols": [
+    "SeniorCitizen",
+    "tenure",
+    "MonthlyCharges",
+    "TotalCharges",
+    "sentiment_neg",
+    "sentiment_neu",
+    "sentiment_pos",
+    "sentiment_compound",
+    "feedback_length",
+    "feedback_word_count",
+    "avg_monthly_charge",
+    "is_new_customer",
+    "has_internet",
+    "num_services",
+    "spending_rate",
+    "charge_per_service"
+  ],
+  "cat_cols": [
+    "gender",
+    "Partner",
+    "Dependents",
+    "PhoneService",
+    "MultipleLines",
+    "InternetService",
+    "OnlineSecurity",
+    "OnlineBackup",
+    "DeviceProtection",
+    "TechSupport",
+    "StreamingTV",
+    "StreamingMovies",
+    "Contract",
+    "PaperlessBilling",
+    "PaymentMethod"
+  ],
+  "risk_thresholds": {
+    "high": 0.7,
+    "medium": 0.4
+  },
+  "model_performance": [
+    {
+      "model": "GradientBoosting",
+      "cv_roc_auc_mean": 0.968,
+      "cv_roc_auc_std": 0.0057,
+      "test_roc_auc": 0.9679,
+      "test_f1": 0.8681,
+      "test_accuracy": 0.9319
+    },
+    {
+      "model": "RandomForest",
+      "cv_roc_auc_mean": 0.9528,
+      "cv_roc_auc_std": 0.0049,
+      "test_roc_auc": 0.9535,
+      "test_f1": 0.839,
+      "test_accuracy": 0.9155
+    },
+    {
+      "model": "LogisticRegression",
+      "cv_roc_auc_mean": 0.9437,
+      "cv_roc_auc_std": 0.0088,
+      "test_roc_auc": 0.9498,
+      "test_f1": 0.7821,
+      "test_accuracy": 0.8687
+    }
+  ],
+  "exclude_cols_for_features": [
+    "sentiment_label",
+    "Churn",
+    "ChurnLabel",
+    "tenure_group",
+    "CustomerFeedback"
+  ]
+}

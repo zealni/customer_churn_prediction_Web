@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: churn_intelligence_api
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend/models:/app/models
+      - ./backend/churn_predictions.db:/app/churn_predictions.db
+    restart: unless-stopped

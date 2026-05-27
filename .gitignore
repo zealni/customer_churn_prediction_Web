@@ -1,0 +1,35 @@
+# Backend Python & ML Environment/Cache
+/backend/.dist
+/backend/.env
+/backend/.pytest_cache
+/backend/.venv
+/backend/__pycache__/
+/backend/churn_predictions.db
+/backend/server.err.log
+/backend/server.out.log
+*.pyc
+
+# Frontend Flutter Web
+/frontend/.dart_tool/
+/frontend/.flutter-plugins-dependencies
+/frontend/.pub-cache/
+/frontend/.pub/
+/frontend/build/
+*.class
+*.log
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+*.iml
+*.ipr
+*.iws
+.idea/
+/frontend/android/app/debug
+/frontend/android/app/profile
+/frontend/android/app/release
