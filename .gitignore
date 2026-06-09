@@ -1,35 +1,174 @@
-# Backend Python & ML Environment/Cache
-/backend/.dist
-/backend/.env
-/backend/.pytest_cache
-/backend/.venv
-/backend/__pycache__/
-/backend/churn_predictions.db
-/backend/server.err.log
-/backend/server.out.log
-*.pyc
+# ============================================================
+# Backend - Python & Machine Learning
+# ============================================================
 
-# Frontend Flutter Web
-/frontend/.dart_tool/
-/frontend/.flutter-plugins-dependencies
-/frontend/.pub-cache/
-/frontend/.pub/
-/frontend/build/
-*.class
+# Python environment
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Python cache and testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+*.egg-info/
+dist/
+build/
+
+# Jupyter Notebooks - keep .ipynb in repo, but exclude checkpoint cache
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# ML Models & Serialized Objects (these are often large)
+*.joblib
+*.pkl
+*.pickle
+*.cbm
+*.h5
+*.model
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Log files
 *.log
-*.swp
+server.err.log
+server.out.log
+
+# Temporary and output files (generated during execution)
+backend/output/*
+backend/dataset/output/*
+backend/dataset/output_modern/*
+!backend/output/.gitkeep
+!backend/dataset/output/.gitkeep
+!backend/dataset/output_modern/.gitkeep
+
+# System files
 .DS_Store
-.atom/
-.build/
-.buildlog/
-.history
-.svn/
-.swiftpm/
-migrate_working_dir/
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ============================================================
+# Frontend - Flutter/Dart
+# ============================================================
+
+# Flutter/Dart build artifacts
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+.dart_plugins_generated
+
+# Flutter specific
+pubspec.lock  # Optional: include if you want reproducible builds
+flutter/ephemeral/
+coverage/
+
+# Dart-specific
+.dart_tool/
+
+# ============================================================
+# IDE & Editor
+# ============================================================
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs
+.idea/
 *.iml
 *.ipr
 *.iws
-.idea/
-/frontend/android/app/debug
-/frontend/android/app/profile
-/frontend/android/app/release
+.gradle/
+.classpath
+.project
+.settings/
+*.sublime-workspace
+*.sublime-project
+
+# Vim
+.vim/
+*.swp
+*.swo
+*~
+.vimdirinfo
+
+# General editor
+*~
+.swp
+.swo
+
+# ============================================================
+# Build & Deployment
+# ============================================================
+
+# Docker
+.docker-compose.override.yml
+.dockerignore
+
+# Node (if applicable)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# ============================================================
+# OS & Platform Specific
+# ============================================================
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Linux
+.~
+.directory
+
+# ============================================================
+# Large Data Files (Keep data tracked but ignore intermediate processing)
+# ============================================================
+
+# Large CSV outputs from model runs (keep training data in dataset folder)
+*.csv.bak
+temp_*.csv
+
+# ============================================================
+# Additional Ignores
+# ============================================================
+
+# Analysis
+analyze.txt
+
+# OS lock files
+.lock
+*.lock
